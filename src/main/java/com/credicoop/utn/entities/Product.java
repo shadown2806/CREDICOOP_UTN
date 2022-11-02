@@ -6,13 +6,14 @@ import lombok.*;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
 @AllArgsConstructor
-@NoArgsConstructor
 @ToString
-@Entity(name = "Product")
+@Entity
 @Table(name = "product")
 public class Product{
     @Id
@@ -28,10 +29,30 @@ public class Product{
     private LocalDate modifiedAt;
     @Column(name = "deleted_at", columnDefinition = "DATE")
     private LocalDate deletedAt;
-    @Column(name = "stock", columnDefinition = "DATE")
+    @Column(name = "stock")
     private Integer stock;
     @Column(name = "product_available")
     private Boolean productAvailable;
-    @Column(name = "discount_available")
-    private Boolean discountAvailable;
+
+
+    @OneToMany(mappedBy = "product")
+    private List<CustomizeArea> customizeAreaList;
+
+    @ManyToOne(targetEntity = Manager.class)
+    @JoinColumn(name = "manager_id",referencedColumnName = "id")
+    private Manager manager;
+
+    @ManyToMany
+    private List<Shop> shopList;
+
+    public Product(){
+
+        this.customizeAreaList = new ArrayList<>();
+        this.shopList = new ArrayList<>();
+
+    }
+
+
+
+
 }

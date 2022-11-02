@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -24,6 +25,14 @@ public class Shop {
     private String phone;
     @Column(name = "address")
     private String address;
+
+    @ManyToMany(mappedBy = "manager")
+    private List<Product> productList;
+
+    @ManyToOne(targetEntity = Seller.class)
+    @JoinColumn(name = "shop_id",referencedColumnName = "id")
+    private Shop shop;
+
 
 
 }

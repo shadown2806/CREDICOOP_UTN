@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -21,5 +22,9 @@ public class Category {
     private String name;
     @Column(name = "description")
     private String description;
+
+    @OneToMany(targetEntity = Product.class)
+    @JoinColumn(name = "category_id",referencedColumnName = "id")
+    private List<Product> products;
 
 }

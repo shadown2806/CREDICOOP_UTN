@@ -7,7 +7,6 @@ import com.credicoop.utn.services.ProductService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.time.LocalDate;
 import java.util.List;
 

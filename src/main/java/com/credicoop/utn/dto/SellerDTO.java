@@ -1,4 +1,21 @@
 package com.credicoop.utn.dto;
 
-public class SellerDTO extends UserDTO{
+import lombok.Data;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
+@Data
+public class SellerDTO {
+
+    private Long id;
+    private String name;
+    private BigDecimal price;
+    private LocalDate createdAt;
+    private LocalDate modifiedAt;
+    private LocalDate deletedAt;
+    private Integer stock;
+    private Boolean productAvailable;
+    private Boolean discountAvailable;
+
 }

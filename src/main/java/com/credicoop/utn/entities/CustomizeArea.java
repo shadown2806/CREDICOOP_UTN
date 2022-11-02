@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -22,5 +23,14 @@ public class CustomizeArea {
 
     @Column(name = "area")
     private String area;
+
+    @ManyToOne(targetEntity = Product.class)
+    @JoinColumn(name = "product_id",referencedColumnName = "id")
+    private Product product;
+
+    @ManyToOne(targetEntity = Customize.class)
+    @JoinColumn(name = "customize_id",referencedColumnName = "id")
+    private Customize customize;
+
 
 }

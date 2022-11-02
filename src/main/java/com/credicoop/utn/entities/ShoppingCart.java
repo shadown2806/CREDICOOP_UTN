@@ -26,4 +26,7 @@ public class ShoppingCart {
     @Column(name = "cart_empty")
     private Boolean cartEmpty;
 
+    @ManyToOne(targetEntity = Product.class)
+    @JoinColumn(name = "product_id",referencedColumnName = "id")
+    private Product product;
 }

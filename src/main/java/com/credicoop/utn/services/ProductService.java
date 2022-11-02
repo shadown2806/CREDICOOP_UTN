@@ -14,14 +14,18 @@ public class ProductService {
 
     private final ProductRepository productRepository;
 
-    public ProductService(ProductRepository productRepository){this.productRepository = productRepository;}
+    public ProductService(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+    }
 
 
-    public void addProduct(Product product){productRepository.save(product);}
+    public void addProduct(Product product) {
+        productRepository.save(product);
+    }
 
-    public void deleteProduct(Long id){
+    public void deleteProduct(Long id) {
 
-        if(!productRepository.existsById(id)){
+        if (!productRepository.existsById(id)) {
 
             throw new ProductNotFoundException(Constants.PRODUCT_NOT_FOUND + id);
 
@@ -32,10 +36,10 @@ public class ProductService {
     }
 
 
-    public Product getProduct(Long id){
+    public Product getProduct(Long id) {
 
         Optional<Product> product = productRepository.findById(id);
-        if(!product.isPresent()){
+        if (!product.isPresent()) {
 
             throw new ProductNotFoundException(Constants.PRODUCT_NOT_FOUND + id);
 
@@ -46,6 +50,8 @@ public class ProductService {
     }
 
 
-    public List<Product> getAllProduct(){return productRepository.findAll();}
+    public List<Product> getAllProduct() {
+        return productRepository.findAll();
+    }
 
 }
