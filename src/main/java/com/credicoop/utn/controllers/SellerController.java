@@ -29,7 +29,7 @@ public class SellerController {
 
     @PostMapping(value = "add")
     @ResponseStatus(HttpStatus.CREATED)
-    public void createProduct(@RequestBody SellerDTO sellerDTO){
+    public void createSeller(@RequestBody SellerDTO sellerDTO){
 
         sellerDTO.setCreatedAt(LocalDate.now());
 
@@ -38,9 +38,18 @@ public class SellerController {
 
     }
 
+    @DeleteMapping(value =  "delete/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public void deleteSeller(@PathVariable("id") Long id){
+
+        sellerService.deleteSeller(id);
+
+    }
+
+
     @GetMapping(value = "{id}")
     @ResponseStatus(HttpStatus.OK)
-    public SellerDTO getProduct(@PathVariable("id") Long id){
+    public SellerDTO getSeller(@PathVariable("id") Long id){
 
         Seller seller = sellerService.getSeller(id);
         return sellerMapper.convertToDto(seller);
@@ -49,7 +58,7 @@ public class SellerController {
 
     @GetMapping(value = "all")
     @ResponseStatus(HttpStatus.OK)
-    public List<SellerDTO> getAllProduct(){
+    public List<SellerDTO> getAllSeller(){
 
         List<Seller> seller = sellerService.getAllSeller();
         return sellerMapper.ListConvertToDto(seller);

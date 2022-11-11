@@ -3,7 +3,6 @@ package com.credicoop.utn.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -30,15 +29,15 @@ public class Manager {
 
 
 
-    @ManyToMany
-    private List<PaymentMethod> paymentMethod;
+
 
     @OneToMany(mappedBy = "manager")
-    private List<Product> productList;
+    private List<ProductBase> productBaseList;
+
+
     public Manager(){
 
-        this.paymentMethod = new ArrayList<>();
-        this.productList = new ArrayList<>();
+        this.productBaseList = new ArrayList<>();
 
     }
 

@@ -23,8 +23,8 @@ public class Category {
     @Column(name = "description")
     private String description;
 
-    @OneToMany(targetEntity = Product.class)
+    @OneToMany(targetEntity = CustomizedProduct.class)
     @JoinColumn(name = "category_id",referencedColumnName = "id")
-    private List<Product> products;
+    private List<CustomizedProduct> customizedProducts;
 
 }

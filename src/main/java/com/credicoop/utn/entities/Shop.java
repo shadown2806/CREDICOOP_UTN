@@ -26,8 +26,8 @@ public class Shop {
     @Column(name = "address")
     private String address;
 
-    @ManyToMany(mappedBy = "manager")
-    private List<Product> productList;
+    @ManyToMany(mappedBy = "shopList")
+    private List<CustomizedProduct> customizedProductList;
 
     @ManyToOne(targetEntity = Seller.class)
     @JoinColumn(name = "shop_id",referencedColumnName = "id")

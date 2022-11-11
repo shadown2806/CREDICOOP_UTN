@@ -13,9 +13,13 @@ public class Seller extends UserEntity {
     @OneToMany(mappedBy = "shop")
     private List<Shop> shopList;
 
+    @ManyToMany
+    private List<PaymentMethod> paymentMethod;
+
     public Seller(){
 
         this.shopList = new ArrayList<>();
+        this.paymentMethod = new ArrayList<>();
 
     }
 

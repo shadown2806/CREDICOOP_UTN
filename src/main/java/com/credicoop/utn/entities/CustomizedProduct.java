@@ -14,8 +14,8 @@ import java.util.List;
 @AllArgsConstructor
 @ToString
 @Entity
-@Table(name = "product")
-public class Product{
+@Table(name = "customized_product")
+public class CustomizedProduct {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -35,19 +35,15 @@ public class Product{
     private Boolean productAvailable;
 
 
-    @OneToMany(mappedBy = "product")
-    private List<CustomizeArea> customizeAreaList;
+    @OneToMany(mappedBy = "customizedProduct")
+    private List<ProductBase> productBaseList;
 
-    @ManyToOne(targetEntity = Manager.class)
-    @JoinColumn(name = "manager_id",referencedColumnName = "id")
-    private Manager manager;
 
     @ManyToMany
     private List<Shop> shopList;
 
-    public Product(){
+    public CustomizedProduct(){
 
-        this.customizeAreaList = new ArrayList<>();
         this.shopList = new ArrayList<>();
 
     }
