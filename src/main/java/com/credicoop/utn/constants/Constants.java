@@ -7,6 +7,8 @@ public class Constants {
     public static final String CUSTOMIZED_PRODUCT_NOT_FOUND = "THERE IS NO CUSTOMIZED PRODUCT WITH ID: ";
     public static final String PRODUCT_BASE_NOT_FOUND = "THERE IS NO CUSTOMIZED PRODUCT WITH ID: ";
     public static final String SELLER_NOT_FOUND = "THERE IS NO SELLER WITH ID: ";
+    public static final String CATEGORY_NOT_FOUND = "THERE IS NO CATEGORY WITH ID: ";
+    public static final String CUSTOMER_NOT_FOUND = "THERE IS NO CUSTOMER WITH ID: ";
     public static final String SHIPPER_EXISTS = "THERE IS ALREADY A SHIPPER WITH THE PHONE: ";
     public static final String SHIPPER_NOT_FOUND = "THERE IS NO SHIPPER WITH ID: ";
     public static final String COMA = ",";
