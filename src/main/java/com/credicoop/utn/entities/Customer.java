@@ -14,6 +14,4 @@ public class Customer extends UserEntity {
     @OneToMany(mappedBy = "order")
     private List<Order> orderList;
 
-
-
 }
