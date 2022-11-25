@@ -1,12 +1,20 @@
 package com.credicoop.utn.dto;
 
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 public class PaymentMethodDTO {
 
-    private long id;
+    private Long id;
     private String paymentType;
 
 }

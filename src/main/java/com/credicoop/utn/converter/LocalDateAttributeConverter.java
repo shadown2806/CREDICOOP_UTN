@@ -1,5 +1,6 @@
 package com.credicoop.utn.converter;
 
+
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
 import java.sql.Date;
