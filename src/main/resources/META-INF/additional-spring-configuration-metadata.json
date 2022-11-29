@@ -1,8 +1,0 @@
-{
-  "properties": [
-    {
-      "name": "sprign.application.name",
-      "type": "java.lang.String",
-      "description": "Description for sprign.application.name."
-  }
-] }
