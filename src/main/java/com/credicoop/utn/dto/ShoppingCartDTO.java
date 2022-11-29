@@ -3,6 +3,7 @@ package com.credicoop.utn.dto;
 import lombok.Data;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 @Data
 public class ShoppingCartDTO {
@@ -11,5 +12,5 @@ public class ShoppingCartDTO {
     private BigDecimal cartPriceAmount;
     private int quantity;
     private Boolean empty;
-
+    private LocalDate createdAt;
 }

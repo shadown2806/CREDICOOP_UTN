@@ -3,6 +3,8 @@ package com.credicoop.utn.dto;
 
 import lombok.Data;
 
+import java.time.LocalDate;
+
 
 @Data
 public class ShopDTO {
@@ -11,5 +13,6 @@ public class ShopDTO {
     private String companyName;
     private String phone;
     private String address;
+    private LocalDate createdAt;
 
 }
