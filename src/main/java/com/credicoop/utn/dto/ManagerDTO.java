@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.time.LocalDate;
+
 
 @Getter
 @Setter
@@ -18,5 +20,6 @@ public class ManagerDTO {
     private String username;
     private String password;
     private String email;
+    private LocalDate createdAt;
 
 }
