@@ -2,6 +2,8 @@ package com.credicoop.utn.dto;
 
 import lombok.Data;
 
+import java.time.LocalDate;
+
 
 @Data
 public class ManagerDTO {
@@ -10,5 +12,6 @@ public class ManagerDTO {
     private String username;
     private String password;
     private String email;
+    private LocalDate createdAt;
 
 }

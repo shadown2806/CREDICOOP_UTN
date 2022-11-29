@@ -3,6 +3,7 @@ package com.credicoop.utn.dto;
 import lombok.Data;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 @Data
 public class CustomizeDTO {
@@ -12,5 +13,5 @@ public class CustomizeDTO {
     private BigDecimal customizePrice;
     private String image;
     private String phrase;
-
+    private LocalDate createdAt;
 }
