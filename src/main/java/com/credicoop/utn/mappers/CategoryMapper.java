@@ -12,6 +12,7 @@ import java.util.List;
 public class CategoryMapper {
 
     private final ModelMapper categoryMapper;
+
     public CategoryMapper(){this.categoryMapper = new ModelMapper();}
 
     public List<CategoryDTO> ListConvertToDto(List<Category> listCategory){
@@ -25,7 +26,6 @@ public class CategoryMapper {
         }
 
         return listCategoryDTO;
-
     }
 
     public CategoryDTO convertToDto(Category category) {

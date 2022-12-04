@@ -13,7 +13,7 @@ import java.util.Optional;
 public class CustomizeService {
     private final CustomizeRepository customizeRepository;
 
-    public CustomizeService(CustomizeRepository CustomizeRepository) {
+    public CustomizeService(CustomizeRepository customizeRepository) {
         this.customizeRepository = customizeRepository;
     }
 
@@ -35,7 +35,7 @@ public class CustomizeService {
         Optional<Customize> customize = customizeRepository.findById(id);
         if (customize.isEmpty()) {
 
-            throw new ProductNotFoundException(Constants.CUSTOMIZED_PRODUCT_NOT_FOUND + id);
+            throw new ProductNotFoundException(Constants.CUSTOMIZED_NOT_FOUND + id);
 
         }
         return customize.get();

@@ -33,10 +33,6 @@ public class Manager {
     @Column(name = "emails")
     private String email;
 
-
-
-
-
     @OneToMany(mappedBy = "manager")
     private List<ProductBase> productBaseList;
 

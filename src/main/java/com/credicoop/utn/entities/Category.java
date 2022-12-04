@@ -1,9 +1,6 @@
 package com.credicoop.utn.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,6 +16,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 @Entity(name = "Category")
 @Table(name = "category")
 public class Category {
@@ -29,9 +27,5 @@ public class Category {
     private String name;
     @Column(name = "description")
     private String description;
-
-    @OneToMany(targetEntity = CustomizedProduct.class)
-    @JoinColumn(name = "category_id",referencedColumnName = "id")
-    private List<CustomizedProduct> customizedProducts;
 
 }

@@ -1,16 +1,8 @@
 package com.credicoop.utn.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Getter
@@ -18,6 +10,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@ToString
 @Table(name = "customize")
 public class Customize {
 
@@ -33,5 +26,8 @@ public class Customize {
     @Column(name="phrase")
     private String phrase;
 
+    @ManyToOne(targetEntity = CustomizeArea.class)
+    @JoinColumn(name = "customize_area_id", referencedColumnName = "id")
+    private CustomizeArea customizeArea;
 
 }

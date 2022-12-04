@@ -31,7 +31,6 @@ public class CategoryController {
     @PostMapping(value = "add")
     @ResponseStatus(HttpStatus.CREATED)
     public void createCategory(@RequestBody CategoryDTO categoryDTO){
-
         Category category = categoryMapper.convertToEntity(categoryDTO);
         categoryService.addCategory(category);
 
@@ -40,24 +39,19 @@ public class CategoryController {
     @DeleteMapping(value = "delete/{id}")
     @ResponseStatus(HttpStatus.OK)
     public void deleteCategory(@PathVariable("id") Long id){
-
         categoryService.deleteCategory(id);
-
     }
 
     @GetMapping(value = "{id}")
     @ResponseStatus(HttpStatus.OK)
     public CategoryDTO getCategory(@PathVariable("id") Long id){
-
         Category category = categoryService.getCategory(id);
         return categoryMapper.convertToDto(category);
-
     }
 
     @GetMapping(value = "all")
     @ResponseStatus(HttpStatus.OK)
     public List<CategoryDTO> getAllCategory(){
-
         List<Category> categoryList = categoryService.getAllCategory();
         return categoryMapper.ListConvertToDto(categoryList);
     }

@@ -2,6 +2,8 @@ package com.credicoop.utn.dto;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+
+import com.credicoop.utn.entities.Manager;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,14 +18,10 @@ import lombok.ToString;
 @ToString
 public class ProductBaseDTO {
 
-    private Long id;
+    private Long productCode;
     private String name;
     private BigDecimal price;
-    private LocalDate createdAt;
-    private LocalDate modifiedAt;
-    private LocalDate deletedAt;
-    private Integer stock;
-    private Boolean productAvailable;
-    private Boolean discountAvailable;
+    private Long managerId;
+    private Long customizeAreaId;
 
 }

@@ -5,16 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.math.BigDecimal;
-import java.time.LocalDate;
 
 
 @Getter
@@ -26,26 +18,13 @@ import java.time.LocalDate;
 public class ProductBase {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "product_code")
+    private Long productCode;
     @Column(name = "name")
     private String name;
     @Column(name = "price")
     private BigDecimal price;
-    @Column(name = "created_at", columnDefinition = "DATE")
-    private LocalDate createdAt;
-    @Column(name = "modified_at", columnDefinition = "DATE")
-    private LocalDate modifiedAt;
-    @Column(name = "deleted_at", columnDefinition = "DATE")
-    private LocalDate deletedAt;
-    @Column(name = "stock")
-    private Integer stock;
-    @Column(name = "product_available")
-    private Boolean productAvailable;
 
-    @ManyToOne(targetEntity = CustomizedProduct.class)
-    @JoinColumn(name = "customize_product_id",referencedColumnName = "id")
-    private CustomizedProduct customizedProduct;
 
     @ManyToOne(targetEntity = CustomizeArea.class)
     @JoinColumn(name = "customize_area_id",referencedColumnName = "id")

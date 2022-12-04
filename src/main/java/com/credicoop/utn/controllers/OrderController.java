@@ -5,7 +5,14 @@ import com.credicoop.utn.entities.Order;
 import com.credicoop.utn.mappers.OrderMapper;
 import com.credicoop.utn.services.OrderService;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -18,47 +25,35 @@ public class OrderController {
     private final OrderMapper orderMapper;
 
     public OrderController(OrderService orderService, OrderMapper orderMapper){
-
         this.orderService = orderService;
         this.orderMapper = orderMapper;
-
     }
-
 
     @PostMapping(value = "add")
     @ResponseStatus(HttpStatus.CREATED)
     public void createOrder(@RequestBody OrderDTO orderDTO){
-
         orderDTO.setOrderDate(LocalDate.now());
-
         Order order = orderMapper.convertToEntity(orderDTO);
         orderService.addOrder(order);
-
     }
 
     @DeleteMapping(value =  "delete/{id}")
     @ResponseStatus(HttpStatus.OK)
     public void deleteOrder(@PathVariable("id") Long id){
-
         orderService.deleteOrder(id);
-
     }
 
     @GetMapping(value = "{id}")
     @ResponseStatus(HttpStatus.OK)
     public OrderDTO getOrder(@PathVariable("id") Long id){
-
         Order order = orderService.getOrder(id);
         return orderMapper.convertToDto(order);
-
     }
 
     @GetMapping(value = "all")
     @ResponseStatus(HttpStatus.OK)
     public List<OrderDTO> getAllOrder(){
-
         List<Order> orderList = orderService.getAllOrder();
         return orderMapper.ListConvertToDto(orderList);
     }
-
 }

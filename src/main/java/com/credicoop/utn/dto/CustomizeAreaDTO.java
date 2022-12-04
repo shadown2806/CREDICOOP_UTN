@@ -8,7 +8,6 @@ import lombok.ToString;
 
 import java.time.LocalDate;
 
-
 @Getter
 @Setter
 @AllArgsConstructor
@@ -19,5 +18,8 @@ public class CustomizeAreaDTO {
     private Long id;
     private String area;
     private LocalDate createdAt;
+    private CustomizeDTO customize;
+
+
 
 }

@@ -16,10 +16,9 @@ import java.time.LocalDate;
 @ToString
 public class ManagerDTO {
 
-    private Float id;
+    private Long id;
     private String username;
     private String password;
     private String email;
-    private LocalDate createdAt;
 
 }

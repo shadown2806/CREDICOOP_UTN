@@ -32,8 +32,6 @@ public class Order {
     private Long orderNumber;
     @Column(name = "order_date", columnDefinition = "DATE")
     private LocalDate orderDate;
-    @Column(name = "ship_date", columnDefinition = "DATE")
-    private LocalDate shipDate;
     @Column(name = "status")
     private Boolean status;
     @Column(name = "order_amount")

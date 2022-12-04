@@ -42,10 +42,6 @@ public abstract class UserEntity {
     @Column(name = "telephone",nullable = false)
     private String telephone;
 
-    @Column(name = "created_at",nullable = false, columnDefinition = "DATE")
-    private LocalDate createdAt;
 
-    @Column(name = "modified_at",nullable = false, columnDefinition = "DATE")
-    private LocalDate modifiedAt;
 
 }

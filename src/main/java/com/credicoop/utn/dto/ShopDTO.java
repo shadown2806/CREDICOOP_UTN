@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.time.LocalDate;
 
 
 @Getter
@@ -20,6 +19,6 @@ public class ShopDTO {
     private String companyName;
     private String phone;
     private String address;
-    private LocalDate createdAt;
+    private Long sellerId;
 
 }

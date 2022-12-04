@@ -1,7 +1,5 @@
 package com.credicoop.utn.dto;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,13 +15,11 @@ import lombok.ToString;
 public class SellerDTO {
 
     private Long id;
-    private String name;
-    private BigDecimal price;
-    private LocalDate createdAt;
-    private LocalDate modifiedAt;
-    private LocalDate deletedAt;
-    private Integer stock;
-    private Boolean productAvailable;
-    private Boolean discountAvailable;
+    private String firstName;
+    private String lastName;
+    private String telephone;
+    private String username;
+    private String password;
+    private String email;
 
 }

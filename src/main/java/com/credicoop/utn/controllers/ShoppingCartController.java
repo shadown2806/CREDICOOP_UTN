@@ -1,7 +1,7 @@
+/*
 package com.credicoop.utn.controllers;
 
 import com.credicoop.utn.dto.ShoppingCartDTO;
-import com.credicoop.utn.entities.ShoppingCart;
 import com.credicoop.utn.mappers.ShoppingCartMapper;
 import com.credicoop.utn.services.ShoppingCartService;
 import org.springframework.http.HttpStatus;
@@ -57,3 +57,4 @@ public class ShoppingCartController {
     }
 
 }
+*/

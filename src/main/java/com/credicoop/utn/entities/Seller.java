@@ -1,10 +1,7 @@
 package com.credicoop.utn.entities;
 
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,11 +10,14 @@ import java.util.List;
 @Table(name = "seller")
 public class Seller extends UserEntity {
 
-    @OneToMany(mappedBy = "shop")
+    @OneToMany(mappedBy = "seller")
     private List<Shop> shopList;
 
     @ManyToMany
     private List<PaymentMethod> paymentMethod;
+
+
+
 
     public Seller(){
 
